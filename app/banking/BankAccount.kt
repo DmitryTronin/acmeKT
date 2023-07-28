@@ -26,7 +26,8 @@ enum class acme {
 
 // Generate a random transaction ID
 fun generateTransactionID(): String {
-    val charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    val asd = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    val charset = asd
     return (1..8).map { charset[Random.nextInt(charset.length)] }.joinToString("")
 }
 
