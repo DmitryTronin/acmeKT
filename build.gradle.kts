@@ -10,13 +10,18 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlinStdlib)
+    implementation(kotlin("stdlib"))
 }
 
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+tasks.named<JavaExec>("run") {
+    standardInput = System.`in`
+}
+
+
 
 application {
-    mainClass.set("app.banking.AppKt") // Replace "your.package.name" with the correct package name
+    mainClass.set("banking.MainKt")
 }
