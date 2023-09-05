@@ -33,11 +33,13 @@ fun main() {
             1 -> {
                 println("Enter amount to deposit: ")
                 val amount = scanner.nextDouble()
+                scanner.nextLine() // consume the newline character
                 user.account.deposit(amount)
             }
             2 -> {
                 println("Enter amount to withdraw: ")
                 val amount = scanner.nextDouble()
+                scanner.nextLine() // consume the newline character
                 user.account.withdraw(amount)
             }
             3 -> user.displayBalance()
