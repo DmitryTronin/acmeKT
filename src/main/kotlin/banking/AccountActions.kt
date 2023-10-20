@@ -1,9 +1,9 @@
 package banking
 
-class Account {
+class AccountActions {
     var balance: Double = 0.0
-
     fun deposit(amount: Double) {
+
         if (amount <= 0) {
             println("Deposit unsuccessful: Invalid value. Amount deposited must be greater than zero.")
         } else {
