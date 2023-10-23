@@ -20,8 +20,8 @@ fun main() {
     }
 
 
-    val account = Account()
-    val user = User(name, account)
+    val accActions = AccountActions()
+//    val user = User(name, account)
 
     var exit = false
 
@@ -69,18 +69,18 @@ fun main() {
             1 -> {
                 println("Enter amount to deposit: ")
                 val amount = getAmount() ?: continue
-                user.account.deposit(amount)
+                accActions.deposit(amount)
             }
             2 -> {
                 println("Enter amount to withdraw: ")
                 val amount = getAmount()
                 if (amount != null) {
-                    user.account.withdraw(amount)
+                    accActions.withdraw(amount)
                 } else {
                     println("Invalid operation. Try again.")
                 }
             }
-            3 -> user.account.displayBalance()
+            3 -> accActions.displayBalance()
             4 -> exit = true
             else -> {
                 println("Invalid operation. Try again.")
