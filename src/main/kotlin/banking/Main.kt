@@ -20,7 +20,7 @@ fun main() {
     }
 
 
-    val accActions = AccountActions()
+    val accActions = Account()
 //    val user = User(name, account)
 
     var exit = false
