@@ -11,16 +11,16 @@ fun main() {
     var name: String
     while (true) {
         println("Please log in using username:")
-    name = scanner.nextLine()
-    if (validUserNames.contains(name)) {
-        break
-    } else {
-        println("Invalid username")
-    }
+        name = scanner.nextLine()
+        if (validUserNames.contains(name)) {
+            break
+        } else {
+            println("Invalid username")
+        }
     }
 
 
-    val accActions = Account()
+    val accActions = AccountActions()
 //    val user = User(name, account)
 
     var exit = false
@@ -65,12 +65,13 @@ fun main() {
         println("4: Exit")
 
         val choice = getUserChoice() ?: continue
-        when(choice) {
+        when (choice) {
             1 -> {
                 println("Enter amount to deposit: ")
                 val amount = getAmount() ?: continue
                 accActions.deposit(amount)
             }
+
             2 -> {
                 println("Enter amount to withdraw: ")
                 val amount = getAmount()
@@ -80,6 +81,7 @@ fun main() {
                     println("Invalid operation. Try again.")
                 }
             }
+
             3 -> accActions.displayBalance()
             4 -> exit = true
             else -> {
