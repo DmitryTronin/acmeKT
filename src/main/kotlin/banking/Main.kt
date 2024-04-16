@@ -18,13 +18,10 @@ fun main() {
             println("Invalid username")
         }
     }
-
-
     val accActions = AccountActions()
+
 //    val user = User(name, account)
-
     var exit = false
-
     fun getAmount(): Double? {
         return try {
             val input = scanner.nextDouble()
@@ -69,6 +66,7 @@ fun main() {
             1 -> {
                 println("Enter amount to deposit: ")
                 val amount = getAmount() ?: continue
+
                 accActions.deposit(amount)
             }
 
@@ -83,7 +81,20 @@ fun main() {
             }
 
             3 -> accActions.displayBalance()
-            4 -> exit = true
+            4 -> {
+                println("Enter amount to deposit: ")
+                val amount = getAmount() ?: continue
+
+                accActions.depositBlindly(amount)
+                }
+
+            5 -> {
+                println("Enter amount to deposit: ")
+                val amount = getAmount() ?: continue
+
+                accActions.depositBlindlyAgain(amount)
+            }
+            6 -> exit =true
             else -> {
                 println("Invalid operation. Try again.")
             }

@@ -2,6 +2,13 @@ package banking
 
 class AccountActions {
     var balance: Double = 0.0
+
+    private var writeOnlyBalance: Double = 0.0
+        set(value) {
+            balance = value
+            field = value
+        }
+
     fun deposit(amount: Double) {
 
         if (amount <= 0) {
@@ -34,4 +41,15 @@ class AccountActions {
         println("Your current balance is: $balance")
     }
     
+    fun depositBlindly(amount: Double){
+        writeOnlyBalance += amount
+        println("Done")
+    }
+    fun depositBlindlyAgain(amount: Double){
+        writeOnlyBalance += amount
+        println("Done")
+    }
+    fun setWriteOnlyBalance(value: Double){
+        writeOnlyBalance = value
+    }
 }

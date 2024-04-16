@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "gradle",
+            "name": "Gradle run debug-jvm",
+            "tasks": ["run"],
+            "args": ["--debug-jvm"],
+        },
+        
+    ]
+}
